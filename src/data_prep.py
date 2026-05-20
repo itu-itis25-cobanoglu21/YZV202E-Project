@@ -72,7 +72,7 @@ def create_distance_matrix():
     for i, d_coord in enumerate(district_coords):
         for j, s_coord in enumerate(station_coords):
             D[i, j] = get_osrm_distance(d_coord, s_coord)
-            time.sleep(0.05) # Hızlı çekim için süreyi düşürdüm
+            time.sleep(1.0) # OSRM API rate limitine (1 req/sec) uymak için
             
         if (i+1) % 5 == 0:
             print(f"{i+1} ilçenin hesaplaması tamamlandı...")

@@ -75,7 +75,7 @@ def create_map():
                     color="#00ff00", # Neon yeşil (geliştirdiğin oyunun neon-noir estetiğine uygun!)
                     weight=weight,
                     opacity=0.6,
-                    tooltip=f"{d_name} -> {station_names[j]}<br>Tonaj: {tonnage:.1f} ton<br>Kalkış: {time_val:.1f}:00"
+                    tooltip=f"{d_name} -> {station_names[j]}<br>Tonaj: {tonnage:.1f} ton<br>Kalkış: {time_str}"
                 ).add_to(m)
 
     # Haritayı kaydet
