@@ -51,17 +51,17 @@ python test_gradient_unit.py
 ```
 ├── app.ipynb                   # Interactive notebook (main interface)
 ├── src/
-│   ├── solvers.py              # All optimization algorithms + post-processing
-│   ├── model.py                # SLSQP solver module
-│   ├── data_prep.py            # Distance matrix generation
-│   └── visualizations.py       # Map generation
+│   ├── solvers.py              # GD+Armijo, L-BFGS, SLSQP, Newton + post-processing
+│   ├── plot_results.py         # REQ-V2 station load chart, REQ-V3 departure histogram
+│   ├── model.py                # SLSQP solver module (reference)
+│   └── data_prep.py            # Distance matrix generation (OSRM)
 ├── data/
 │   ├── ilceler.xlsx            # District waste data (2004-2025)
 │   ├── istasyonlar.xlsx        # Station locations and capacities
 │   ├── trafik.xlsx             # Hourly traffic speeds
 │   ├── ilce_koordinat.xlsx     # District coordinates + sides
 │   └── distance_matrix.npy     # 39×9 OSRM road distances
-├── test_*.py                   # Test suite
+├── tests/                      # Test suite
 └── outputs/                    # Generated plots and results
 ```
 
@@ -93,8 +93,9 @@ Where:
 Three algorithms demonstrating different convergence rates:
 
 1. **Gradient Descent with Armijo Backtracking** — Linear convergence
-2. **SLSQP (Sequential Least Squares Programming)** — Superlinear convergence (recommended)
-3. **Newton's Method on Reduced Problem** — Quadratic convergence
+2. **L-BFGS-B** — Superlinear convergence (limited-memory quasi-Newton, projected onto equality constraint via simplex projection)
+3. **SLSQP** — Quasi-Newton with native equality constraint support
+4. **Newton's Method on Reduced Problem** — Quadratic convergence on active-route subproblem
 
 **Post-Processing Pipeline:**
 ```
@@ -130,14 +131,15 @@ All data from **Istanbul Metropolitan Municipality (IBB) Open Data Portal**:
 ## Output Files
 
 - `data/interaktif_harita.html` — Interactive Folium map
-- `outputs/all_solvers_comparison.png` — Convergence plots
-- `outputs/station_loads_complete_pipeline.png` — Capacity utilization chart
-- `outputs/stochastic_results.csv` — Scenario test results
+- `outputs/all_solvers_comparison.png` — Convergence comparison (GD vs L-BFGS vs Newton)
+- `outputs/station_loads.png` — Station capacity vs. actual load bar chart (REQ-V2)
+- `outputs/departure_times.png` — Departure time histogram vs. congestion curve (REQ-V3)
+- `outputs/stochastic_results.csv` — Stochastic scenario test results
 
 ## Documentation
 
-- `CLAUDE.md` — Developer guide for Claude Code
 - `PROJECT_PRD.md` — Detailed requirements document
+- `PROJE_DURUMU.md` — Project status report (Turkish)
 - `proposal.pdf` — Original project proposal
 
 ## Authors

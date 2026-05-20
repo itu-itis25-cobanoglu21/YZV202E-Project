@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_81da8dfe069dc78dd7307dc6a1d737ed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_81da8dfe069dc78dd7307dc6a1d737ed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_81da8dfe069dc78dd7307dc6a1d737ed = L.map(
+                "map_81da8dfe069dc78dd7307dc6a1d737ed",
+                {
+                    center: [41.0082, 28.9784],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cc94c3e4647f5c7acaf44484a6b16585 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cc94c3e4647f5c7acaf44484a6b16585.addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var marker_0c5dff26b3236dd6778c1703a8f8752a = L.marker(
+                [41.04899, 28.968704],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_867cd2c29f95ede1211a1d72d027919c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48260be768a7f7764a9781a19c15e305 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9227c8d89f21efc08ce6d5fcfd90ea3c = $(`<div id="html_9227c8d89f21efc08ce6d5fcfd90ea3c" style="width: 100.0%; height: 100.0%;"><b>Baruthane</b> [Avrupa]<br>Capacity: 340 ton/day<br>Load: 792 tons (232.7%)</div>`)[0];
+                popup_48260be768a7f7764a9781a19c15e305.setContent(html_9227c8d89f21efc08ce6d5fcfd90ea3c);
+            
+        
+
+        marker_0c5dff26b3236dd6778c1703a8f8752a.bindPopup(popup_48260be768a7f7764a9781a19c15e305)
+        ;
+
+        
+    
+    
+                marker_0c5dff26b3236dd6778c1703a8f8752a.setIcon(icon_867cd2c29f95ede1211a1d72d027919c);
+            
+    
+            var marker_bf964b1e5599d07387c1f69bbddd9cd3 = L.marker(
+                [40.99794055, 28.82506594],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_015120199eb586b5e98649aa47d6f7dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9db0f60becfc10e7a1b9fdf32a1186a3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_83997f20074dfedc68374670205eba4b = $(`<div id="html_83997f20074dfedc68374670205eba4b" style="width: 100.0%; height: 100.0%;"><b>Yenibosna</b> [Avrupa]<br>Capacity: 1872 ton/day<br>Load: 2185 tons (116.7%)</div>`)[0];
+                popup_9db0f60becfc10e7a1b9fdf32a1186a3.setContent(html_83997f20074dfedc68374670205eba4b);
+            
+        
+
+        marker_bf964b1e5599d07387c1f69bbddd9cd3.bindPopup(popup_9db0f60becfc10e7a1b9fdf32a1186a3)
+        ;
+
+        
+    
+    
+                marker_bf964b1e5599d07387c1f69bbddd9cd3.setIcon(icon_015120199eb586b5e98649aa47d6f7dc);
+            
+    
+            var marker_ad9e0f9bf81a2c9a72081d8f3dd30537 = L.marker(
+                [41.146396, 28.778397],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_a1857b27f4de8506f6da618c96d96c23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4153c384c1b85c59c5a297121d784e4 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d24f73a15b8456d50e1f71231e918d4c = $(`<div id="html_d24f73a15b8456d50e1f71231e918d4c" style="width: 100.0%; height: 100.0%;"><b>Başakşehir</b> [Avrupa]<br>Capacity: 1491 ton/day<br>Load: 2018 tons (135.3%)</div>`)[0];
+                popup_f4153c384c1b85c59c5a297121d784e4.setContent(html_d24f73a15b8456d50e1f71231e918d4c);
+            
+        
+
+        marker_ad9e0f9bf81a2c9a72081d8f3dd30537.bindPopup(popup_f4153c384c1b85c59c5a297121d784e4)
+        ;
+
+        
+    
+    
+                marker_ad9e0f9bf81a2c9a72081d8f3dd30537.setIcon(icon_a1857b27f4de8506f6da618c96d96c23);
+            
+    
+            var marker_81820f83ae996d28253659d14bce576a = L.marker(
+                [41.09103842, 28.29018384],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_4df6292ab6457b72c0ce85fbd537030f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e186b4af820da1d257031f51509730f0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ba716c618f1eb394d2decb20e7b1a4eb = $(`<div id="html_ba716c618f1eb394d2decb20e7b1a4eb" style="width: 100.0%; height: 100.0%;"><b>Silivri</b> [Avrupa]<br>Capacity: 678 ton/day<br>Load: 762 tons (112.3%)</div>`)[0];
+                popup_e186b4af820da1d257031f51509730f0.setContent(html_ba716c618f1eb394d2decb20e7b1a4eb);
+            
+        
+
+        marker_81820f83ae996d28253659d14bce576a.bindPopup(popup_e186b4af820da1d257031f51509730f0)
+        ;
+
+        
+    
+    
+                marker_81820f83ae996d28253659d14bce576a.setIcon(icon_4df6292ab6457b72c0ce85fbd537030f);
+            
+    
+            var marker_1c6eca398cdd91fd32243d71837f49ae = L.marker(
+                [41.13722435, 28.93079057],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_e592ef97fe9427a35e1e5aaf0491fce3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6f895b4d1f53520543a698586fca437 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b449e63d4ccf7ec36305d60ffe0782d6 = $(`<div id="html_b449e63d4ccf7ec36305d60ffe0782d6" style="width: 100.0%; height: 100.0%;"><b>Hasdal</b> [Avrupa]<br>Capacity: 1532 ton/day<br>Load: 2049 tons (133.8%)</div>`)[0];
+                popup_c6f895b4d1f53520543a698586fca437.setContent(html_b449e63d4ccf7ec36305d60ffe0782d6);
+            
+        
+
+        marker_1c6eca398cdd91fd32243d71837f49ae.bindPopup(popup_c6f895b4d1f53520543a698586fca437)
+        ;
+
+        
+    
+    
+                marker_1c6eca398cdd91fd32243d71837f49ae.setIcon(icon_e592ef97fe9427a35e1e5aaf0491fce3);
+            
+    
+            var marker_eb7d75c113b65194c9a76ff3b926f4bc = L.marker(
+                [40.98520513, 29.12996739],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_c3775c13d4cd730f70d24c19980b3f90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_929ae869aa0c23bfda03ec08c4140275 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_28e11015f88e6ab2f7a54fab1d5092bf = $(`<div id="html_28e11015f88e6ab2f7a54fab1d5092bf" style="width: 100.0%; height: 100.0%;"><b>Küçük</b> [Asya]<br>Capacity: 1135 ton/day<br>Load: 343 tons (30.2%)</div>`)[0];
+                popup_929ae869aa0c23bfda03ec08c4140275.setContent(html_28e11015f88e6ab2f7a54fab1d5092bf);
+            
+        
+
+        marker_eb7d75c113b65194c9a76ff3b926f4bc.bindPopup(popup_929ae869aa0c23bfda03ec08c4140275)
+        ;
+
+        
+    
+    
+                marker_eb7d75c113b65194c9a76ff3b926f4bc.setIcon(icon_c3775c13d4cd730f70d24c19980b3f90);
+            
+    
+            var marker_b8dda139b52d37cac7f50ae1143e3262 = L.marker(
+                [41.05831853, 29.11340743],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_bdb10098b68cf089222709202391bb4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85046799414b1b793a3ae6699c77ce9b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ab3a4b544a8283c2cef5b1e309566c34 = $(`<div id="html_ab3a4b544a8283c2cef5b1e309566c34" style="width: 100.0%; height: 100.0%;"><b>Hekimbaşı</b> [Asya]<br>Capacity: 1702 ton/day<br>Load: 1196 tons (70.3%)</div>`)[0];
+                popup_85046799414b1b793a3ae6699c77ce9b.setContent(html_ab3a4b544a8283c2cef5b1e309566c34);
+            
+        
+
+        marker_b8dda139b52d37cac7f50ae1143e3262.bindPopup(popup_85046799414b1b793a3ae6699c77ce9b)
+        ;
+
+        
+    
+    
+                marker_b8dda139b52d37cac7f50ae1143e3262.setIcon(icon_bdb10098b68cf089222709202391bb4c);
+            
+    
+            var marker_260eb6d33b560a20eb19df18c9bf7834 = L.marker(
+                [40.86088235, 29.34715122],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_cbdd85de22b1830bd85bd4519ad39e53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b67c63d589668c2d64ada469d8a4d25 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7e44e8f6f0a5ecb518d0d5ba1610e70d = $(`<div id="html_7e44e8f6f0a5ecb518d0d5ba1610e70d" style="width: 100.0%; height: 100.0%;"><b>Aydınlı</b> [Asya]<br>Capacity: 2723 ton/day<br>Load: 2460 tons (90.3%)</div>`)[0];
+                popup_8b67c63d589668c2d64ada469d8a4d25.setContent(html_7e44e8f6f0a5ecb518d0d5ba1610e70d);
+            
+        
+
+        marker_260eb6d33b560a20eb19df18c9bf7834.bindPopup(popup_8b67c63d589668c2d64ada469d8a4d25)
+        ;
+
+        
+    
+    
+                marker_260eb6d33b560a20eb19df18c9bf7834.setIcon(icon_cbdd85de22b1830bd85bd4519ad39e53);
+            
+    
+            var marker_44dbc80f4f8ac6ccd77d5f06d3a0efe7 = L.marker(
+                [41.15313753, 29.63946372],
+                {
+}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            var icon_99e1df4e95bcbc39482a7db141b1d61d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e22fc9f3eb474e0a576668a5a174cf49 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ba71c6d99fbd4df39454ea2f7a4abca0 = $(`<div id="html_ba71c6d99fbd4df39454ea2f7a4abca0" style="width: 100.0%; height: 100.0%;"><b>Şile</b> [Asya]<br>Capacity: 624 ton/day<br>Load: 293 tons (47.0%)</div>`)[0];
+                popup_e22fc9f3eb474e0a576668a5a174cf49.setContent(html_ba71c6d99fbd4df39454ea2f7a4abca0);
+            
+        
+
+        marker_44dbc80f4f8ac6ccd77d5f06d3a0efe7.bindPopup(popup_e22fc9f3eb474e0a576668a5a174cf49)
+        ;
+
+        
+    
+    
+                marker_44dbc80f4f8ac6ccd77d5f06d3a0efe7.setIcon(icon_99e1df4e95bcbc39482a7db141b1d61d);
+            
+    
+            var circle_marker_3d1717c7e8de6b460fd679274795642b = L.circleMarker(
+                [40.8744, 29.132],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_d669c2cec5311f7da5620cec61c27517 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_520d60f8f82b9bf8e7d6758e056876e6 = $(`<div id="html_520d60f8f82b9bf8e7d6758e056876e6" style="width: 100.0%; height: 100.0%;"><b>Adalar</b><br>Waste: 19.5 ton/day<br>Departure: 12:38</div>`)[0];
+                popup_d669c2cec5311f7da5620cec61c27517.setContent(html_520d60f8f82b9bf8e7d6758e056876e6);
+            
+        
+
+        circle_marker_3d1717c7e8de6b460fd679274795642b.bindPopup(popup_d669c2cec5311f7da5620cec61c27517)
+        ;
+
+        
+    
+    
+            var poly_line_d436b83de431b0b1049a9fcea8dedc4a = L.polyline(
+                [[40.8744, 29.132], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_d436b83de431b0b1049a9fcea8dedc4a.bindTooltip(
+                `<div>
+                     <b>Adalar</b> → Aydınlı<br>Distance: 23.6 km | Tonnage: 19.5 tons<br>Fleet Allocated: 0 trucks<br>Departure: 12:38
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0cb31a4bd5107f56285dfbd6f473b1a = L.circleMarker(
+                [41.1853, 28.7385],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f78c97d6e3cdfea99bf200abb251ce73 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ec0f56cba01723c0261a28f6836ca92b = $(`<div id="html_ec0f56cba01723c0261a28f6836ca92b" style="width: 100.0%; height: 100.0%;"><b>Arnavutköy</b><br>Waste: 223.5 ton/day<br>Departure: 12:22</div>`)[0];
+                popup_f78c97d6e3cdfea99bf200abb251ce73.setContent(html_ec0f56cba01723c0261a28f6836ca92b);
+            
+        
+
+        circle_marker_b0cb31a4bd5107f56285dfbd6f473b1a.bindPopup(popup_f78c97d6e3cdfea99bf200abb251ce73)
+        ;
+
+        
+    
+    
+            var poly_line_585c4501617c62e08404426fee743dea = L.polyline(
+                [[41.1853, 28.7385], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.385721836005419}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_585c4501617c62e08404426fee743dea.bindTooltip(
+                `<div>
+                     <b>Arnavutköy</b> → Başakşehir<br>Distance: 8.3 km | Tonnage: 223.5 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:22
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84bfd49c5e4fb3e82fa0cc899a8f80b8 = L.circleMarker(
+                [40.9845, 29.1065],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_b3086e43d48567079825e1243bafd16b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_07d063b80971191ab06a66964509ae74 = $(`<div id="html_07d063b80971191ab06a66964509ae74" style="width: 100.0%; height: 100.0%;"><b>Ataşehir</b><br>Waste: 343.2 ton/day<br>Departure: 00:00</div>`)[0];
+                popup_b3086e43d48567079825e1243bafd16b.setContent(html_07d063b80971191ab06a66964509ae74);
+            
+        
+
+        circle_marker_84bfd49c5e4fb3e82fa0cc899a8f80b8.bindPopup(popup_b3086e43d48567079825e1243bafd16b)
+        ;
+
+        
+    
+    
+            var poly_line_864c7202b7ea340fe69960e65bc60568 = L.polyline(
+                [[40.9845, 29.1065], [40.98520513, 29.12996739]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.804804491500711}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_864c7202b7ea340fe69960e65bc60568.bindTooltip(
+                `<div>
+                     <b>Ataşehir</b> → Küçük<br>Distance: 3.1 km | Tonnage: 343.2 tons<br>Fleet Allocated: 3 trucks<br>Departure: 00:00
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31f69fd84d8a0569273c4f8e3335de43 = L.circleMarker(
+                [40.9796, 28.7214],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f2c290d7a1b7c5e5700cb08909f2d07e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bd789a1ea0b7592045599e86a710e3ea = $(`<div id="html_bd789a1ea0b7592045599e86a710e3ea" style="width: 100.0%; height: 100.0%;"><b>Avcılar</b><br>Waste: 322.5 ton/day<br>Departure: 00:00</div>`)[0];
+                popup_f2c290d7a1b7c5e5700cb08909f2d07e.setContent(html_bd789a1ea0b7592045599e86a710e3ea);
+            
+        
+
+        circle_marker_31f69fd84d8a0569273c4f8e3335de43.bindPopup(popup_f2c290d7a1b7c5e5700cb08909f2d07e)
+        ;
+
+        
+    
+    
+            var poly_line_e73cd207bf72bbbdc213a24cb687af3f = L.polyline(
+                [[40.9796, 28.7214], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.214580508397782}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_e73cd207bf72bbbdc213a24cb687af3f.bindTooltip(
+                `<div>
+                     <b>Avcılar</b> → Başakşehir<br>Distance: 32.0 km | Tonnage: 322.5 tons<br>Fleet Allocated: 2 trucks<br>Departure: 00:00
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_507da6827069ce18cadb5d63b6ee8573 = L.circleMarker(
+                [41.034, 28.8415],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f22b8f066ec19d8a26e79b4cd0c88310 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c74a0ecc4e14d485d2f8870b34e46402 = $(`<div id="html_c74a0ecc4e14d485d2f8870b34e46402" style="width: 100.0%; height: 100.0%;"><b>Bağcılar</b><br>Waste: 395.0 ton/day<br>Departure: 12:34</div>`)[0];
+                popup_f22b8f066ec19d8a26e79b4cd0c88310.setContent(html_c74a0ecc4e14d485d2f8870b34e46402);
+            
+        
+
+        circle_marker_507da6827069ce18cadb5d63b6ee8573.bindPopup(popup_f22b8f066ec19d8a26e79b4cd0c88310)
+        ;
+
+        
+    
+    
+            var poly_line_585ea6849fc74794ad6cfca72f24ee75 = L.polyline(
+                [[41.034, 28.8415], [40.99794055, 28.82506594]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 11.285447063216923}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_585ea6849fc74794ad6cfca72f24ee75.bindTooltip(
+                `<div>
+                     <b>Bağcılar</b> → Yenibosna<br>Distance: 6.4 km | Tonnage: 395.0 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_132b91a4faeb8d362520872411a9e1f0 = L.circleMarker(
+                [41.0003, 28.8504],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_978b1fca9f827cb53dd1431ff532b716 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b090f78498dc0922cb94b145f24e8223 = $(`<div id="html_b090f78498dc0922cb94b145f24e8223" style="width: 100.0%; height: 100.0%;"><b>Bahçelievler</b><br>Waste: 480.8 ton/day<br>Departure: 12:33</div>`)[0];
+                popup_978b1fca9f827cb53dd1431ff532b716.setContent(html_b090f78498dc0922cb94b145f24e8223);
+            
+        
+
+        circle_marker_132b91a4faeb8d362520872411a9e1f0.bindPopup(popup_978b1fca9f827cb53dd1431ff532b716)
+        ;
+
+        
+    
+    
+            var poly_line_986c1dc084ed07076beb956b8d461901 = L.polyline(
+                [[41.0003, 28.8504], [40.99794055, 28.82506594]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 13.738435067752949}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_986c1dc084ed07076beb956b8d461901.bindTooltip(
+                `<div>
+                     <b>Bahçelievler</b> → Yenibosna<br>Distance: 3.6 km | Tonnage: 480.8 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7cade54a32b654b5989c1d752c76f88c = L.circleMarker(
+                [40.9833, 28.8686],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_25e4949e021f864b9af99319d4c4861a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_407ecdbd4443130e8f2dff18db2d2066 = $(`<div id="html_407ecdbd4443130e8f2dff18db2d2066" style="width: 100.0%; height: 100.0%;"><b>Bakırköy</b><br>Waste: 203.1 ton/day<br>Departure: 00:00</div>`)[0];
+                popup_25e4949e021f864b9af99319d4c4861a.setContent(html_407ecdbd4443130e8f2dff18db2d2066);
+            
+        
+
+        circle_marker_7cade54a32b654b5989c1d752c76f88c.bindPopup(popup_25e4949e021f864b9af99319d4c4861a)
+        ;
+
+        
+    
+    
+            var poly_line_f21e6cba04de49052edec7e02e07d096 = L.polyline(
+                [[40.9833, 28.8686], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 5.803854324526708}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_f21e6cba04de49052edec7e02e07d096.bindTooltip(
+                `<div>
+                     <b>Bakırköy</b> → Başakşehir<br>Distance: 26.5 km | Tonnage: 203.1 tons<br>Fleet Allocated: 1 trucks<br>Departure: 00:00
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3854bea1de189029efd317eb504e1fbd = L.circleMarker(
+                [41.0827, 28.7963],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_ea05f6d801858d1638543a629253634c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_73638bd4f6a5fb96d0dbb17c24bd23b6 = $(`<div id="html_73638bd4f6a5fb96d0dbb17c24bd23b6" style="width: 100.0%; height: 100.0%;"><b>Başakşehir</b><br>Waste: 448.3 ton/day<br>Departure: 12:27</div>`)[0];
+                popup_ea05f6d801858d1638543a629253634c.setContent(html_73638bd4f6a5fb96d0dbb17c24bd23b6);
+            
+        
+
+        circle_marker_3854bea1de189029efd317eb504e1fbd.bindPopup(popup_ea05f6d801858d1638543a629253634c)
+        ;
+
+        
+    
+    
+            var poly_line_848e4cb503fa09335ae220df646fe5ac = L.polyline(
+                [[41.0827, 28.7963], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 12.807194948769045}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_848e4cb503fa09335ae220df646fe5ac.bindTooltip(
+                `<div>
+                     <b>Başakşehir</b> → Başakşehir<br>Distance: 10.9 km | Tonnage: 448.3 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f70ae199aa6a53bf073c0ca444403cfe = L.circleMarker(
+                [41.0346, 28.9048],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_43d02b3efaefbcffbd0d3f9c886ea0a7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7f98b3ea3dbebc489c0328de03865496 = $(`<div id="html_7f98b3ea3dbebc489c0328de03865496" style="width: 100.0%; height: 100.0%;"><b>Bayrampaşa</b><br>Waste: 230.5 ton/day<br>Departure: 12:30</div>`)[0];
+                popup_43d02b3efaefbcffbd0d3f9c886ea0a7.setContent(html_7f98b3ea3dbebc489c0328de03865496);
+            
+        
+
+        circle_marker_f70ae199aa6a53bf073c0ca444403cfe.bindPopup(popup_43d02b3efaefbcffbd0d3f9c886ea0a7)
+        ;
+
+        
+    
+    
+            var poly_line_79d51e06061a0b466f128a53d448b200 = L.polyline(
+                [[41.0346, 28.9048], [41.04899, 28.968704]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.5852232243246505}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_79d51e06061a0b466f128a53d448b200.bindTooltip(
+                `<div>
+                     <b>Bayrampaşa</b> → Baruthane<br>Distance: 10.6 km | Tonnage: 230.5 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:30
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f60684207b35a4fe86712619eae49b0 = L.circleMarker(
+                [41.0435, 29.0069],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_4b35f5d1c7071faa12d2ebc73d87446b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_167162cb1661dd53329ab110bed29f95 = $(`<div id="html_167162cb1661dd53329ab110bed29f95" style="width: 100.0%; height: 100.0%;"><b>Beşiktaş</b><br>Waste: 215.1 ton/day<br>Departure: 12:23</div>`)[0];
+                popup_4b35f5d1c7071faa12d2ebc73d87446b.setContent(html_167162cb1661dd53329ab110bed29f95);
+            
+        
+
+        circle_marker_9f60684207b35a4fe86712619eae49b0.bindPopup(popup_4b35f5d1c7071faa12d2ebc73d87446b)
+        ;
+
+        
+    
+    
+            var poly_line_b6271b07aa0357b902be758c97adf9b5 = L.polyline(
+                [[41.0435, 29.0069], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.146656766275989}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_b6271b07aa0357b902be758c97adf9b5.bindTooltip(
+                `<div>
+                     <b>Beşiktaş</b> → Hasdal<br>Distance: 16.9 km | Tonnage: 215.1 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:23
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea71c5d5508fe64aca8a1c4bdf779d91 = L.circleMarker(
+                [41.1179, 29.0963],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_73932032bc0f6b89d27eba4bd7c1502d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e415eec51ea9ad92c4b67b8d1ff8be0f = $(`<div id="html_e415eec51ea9ad92c4b67b8d1ff8be0f" style="width: 100.0%; height: 100.0%;"><b>Beykoz</b><br>Waste: 244.6 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_73932032bc0f6b89d27eba4bd7c1502d.setContent(html_e415eec51ea9ad92c4b67b8d1ff8be0f);
+            
+        
+
+        circle_marker_ea71c5d5508fe64aca8a1c4bdf779d91.bindPopup(popup_73932032bc0f6b89d27eba4bd7c1502d)
+        ;
+
+        
+    
+    
+            var poly_line_a248f918bcc8ca96632ffae30274bd9a = L.polyline(
+                [[41.1179, 29.0963], [41.05831853, 29.11340743]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.987448530836461}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_a248f918bcc8ca96632ffae30274bd9a.bindTooltip(
+                `<div>
+                     <b>Beykoz</b> → Hekimbaşı<br>Distance: 11.4 km | Tonnage: 244.6 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f12c9eaefcd74fe8f485aac8148bba15 = L.circleMarker(
+                [40.9902, 28.6416],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f2c3eaab1c1adbc74722cd62ef79790a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7f949f8e8c8b23225e9b23d183b22032 = $(`<div id="html_7f949f8e8c8b23225e9b23d183b22032" style="width: 100.0%; height: 100.0%;"><b>Beylikdüzü</b><br>Waste: 272.7 ton/day<br>Departure: 12:31</div>`)[0];
+                popup_f2c3eaab1c1adbc74722cd62ef79790a.setContent(html_7f949f8e8c8b23225e9b23d183b22032);
+            
+        
+
+        circle_marker_f12c9eaefcd74fe8f485aac8148bba15.bindPopup(popup_f2c3eaab1c1adbc74722cd62ef79790a)
+        ;
+
+        
+    
+    
+            var poly_line_9c5518cad0422815f9e691acaddb4f05 = L.polyline(
+                [[40.9902, 28.6416], [41.09103842, 28.29018384]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 7.791163555183094}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_9c5518cad0422815f9e691acaddb4f05.bindTooltip(
+                `<div>
+                     <b>Beylikdüzü</b> → Silivri<br>Distance: 39.9 km | Tonnage: 272.7 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b37fa0baf9ce8f5bf62380f40e30a44 = L.circleMarker(
+                [41.0337, 28.9776],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_8128f83eeec0af4d7d11c1d8031ac6ff = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7bc6f2cb15cb0dbfbdbde4c3e2307361 = $(`<div id="html_7bc6f2cb15cb0dbfbdbde4c3e2307361" style="width: 100.0%; height: 100.0%;"><b>Beyoğlu</b><br>Waste: 254.5 ton/day<br>Departure: 12:39</div>`)[0];
+                popup_8128f83eeec0af4d7d11c1d8031ac6ff.setContent(html_7bc6f2cb15cb0dbfbdbde4c3e2307361);
+            
+        
+
+        circle_marker_3b37fa0baf9ce8f5bf62380f40e30a44.bindPopup(popup_8128f83eeec0af4d7d11c1d8031ac6ff)
+        ;
+
+        
+    
+    
+            var poly_line_05c9dfea8954b9b4ae26cff5e18de685 = L.polyline(
+                [[41.0337, 28.9776], [41.04899, 28.968704]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 7.2706534617207454}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_05c9dfea8954b9b4ae26cff5e18de685.bindTooltip(
+                `<div>
+                     <b>Beyoğlu</b> → Baruthane<br>Distance: 2.7 km | Tonnage: 254.5 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:39
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d041bce18bfb70f6b7435a22d90e116 = L.circleMarker(
+                [41.021, 28.5786],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_2e43ef48fa085bfff32b2f3cfc8424e9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6a8b9b90d2cacfcf6ef42f76f522eab5 = $(`<div id="html_6a8b9b90d2cacfcf6ef42f76f522eab5" style="width: 100.0%; height: 100.0%;"><b>Büyükçekmece</b><br>Waste: 218.9 ton/day<br>Departure: 12:31</div>`)[0];
+                popup_2e43ef48fa085bfff32b2f3cfc8424e9.setContent(html_6a8b9b90d2cacfcf6ef42f76f522eab5);
+            
+        
+
+        circle_marker_4d041bce18bfb70f6b7435a22d90e116.bindPopup(popup_2e43ef48fa085bfff32b2f3cfc8424e9)
+        ;
+
+        
+    
+    
+            var poly_line_46200fa766543557494fb8626d896f0c = L.polyline(
+                [[41.021, 28.5786], [41.09103842, 28.29018384]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.255481534074668}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_46200fa766543557494fb8626d896f0c.bindTooltip(
+                `<div>
+                     <b>Büyükçekmece</b> → Silivri<br>Distance: 30.4 km | Tonnage: 218.9 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a84ddd5662fbe692f1953ef2c55cc4ed = L.circleMarker(
+                [41.144, 28.4616],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_bf46ba727838de198ab692489a5d8539 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f5c283bf6b50ff620ff79e8e87ddfbaa = $(`<div id="html_f5c283bf6b50ff620ff79e8e87ddfbaa" style="width: 100.0%; height: 100.0%;"><b>Çatalca</b><br>Waste: 75.6 ton/day<br>Departure: 12:17</div>`)[0];
+                popup_bf46ba727838de198ab692489a5d8539.setContent(html_f5c283bf6b50ff620ff79e8e87ddfbaa);
+            
+        
+
+        circle_marker_a84ddd5662fbe692f1953ef2c55cc4ed.bindPopup(popup_bf46ba727838de198ab692489a5d8539)
+        ;
+
+        
+    
+    
+            var poly_line_f337be3b1f5c04295a5b7814aa8db7c1 = L.polyline(
+                [[41.144, 28.4616], [41.09103842, 28.29018384]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 2.160721601643659}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_f337be3b1f5c04295a5b7814aa8db7c1.bindTooltip(
+                `<div>
+                     <b>Çatalca</b> → Silivri<br>Distance: 20.3 km | Tonnage: 75.6 tons<br>Fleet Allocated: 0 trucks<br>Departure: 12:17
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b152f9f29776772430d9700ae2b75f0 = L.circleMarker(
+                [41.0351, 29.1764],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_9c5efe4da619d8278676bc0d42250bbf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d9bae92064eb3f946cc72f7bf36081fe = $(`<div id="html_d9bae92064eb3f946cc72f7bf36081fe" style="width: 100.0%; height: 100.0%;"><b>Çekmeköy</b><br>Waste: 218.6 ton/day<br>Departure: 12:31</div>`)[0];
+                popup_9c5efe4da619d8278676bc0d42250bbf.setContent(html_d9bae92064eb3f946cc72f7bf36081fe);
+            
+        
+
+        circle_marker_9b152f9f29776772430d9700ae2b75f0.bindPopup(popup_9c5efe4da619d8278676bc0d42250bbf)
+        ;
+
+        
+    
+    
+            var poly_line_be947d82895b283e2dec165ebdd7fb6e = L.polyline(
+                [[41.0351, 29.1764], [41.15313753, 29.63946372]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.2455758185957535}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_be947d82895b283e2dec165ebdd7fb6e.bindTooltip(
+                `<div>
+                     <b>Çekmeköy</b> → Şile<br>Distance: 52.8 km | Tonnage: 218.6 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f915e3d81b326e5253dd42af881faf9 = L.circleMarker(
+                [41.0384, 28.8824],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_76fb4d4975c9d909dc1c360ee39f7641 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a7cf5039a64b0b9203753d2af703beca = $(`<div id="html_a7cf5039a64b0b9203753d2af703beca" style="width: 100.0%; height: 100.0%;"><b>Esenler</b><br>Waste: 259.6 ton/day<br>Departure: 12:36</div>`)[0];
+                popup_76fb4d4975c9d909dc1c360ee39f7641.setContent(html_a7cf5039a64b0b9203753d2af703beca);
+            
+        
+
+        circle_marker_0f915e3d81b326e5253dd42af881faf9.bindPopup(popup_76fb4d4975c9d909dc1c360ee39f7641)
+        ;
+
+        
+    
+    
+            var poly_line_c6ec27934e2887e7709c88cbdb2e6423 = L.polyline(
+                [[41.0384, 28.8824], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 7.416917938381916}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_c6ec27934e2887e7709c88cbdb2e6423.bindTooltip(
+                `<div>
+                     <b>Esenler</b> → Hasdal<br>Distance: 19.8 km | Tonnage: 259.6 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:36
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55aae7d869a250f5d9b733221db61df5 = L.circleMarker(
+                [41.0343, 28.6801],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_27048815b6cb3accca743697db6b9df4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ea345dd60cf892ffa30471a4cc889265 = $(`<div id="html_ea345dd60cf892ffa30471a4cc889265" style="width: 100.0%; height: 100.0%;"><b>Esenyurt</b><br>Waste: 730.3 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_27048815b6cb3accca743697db6b9df4.setContent(html_ea345dd60cf892ffa30471a4cc889265);
+            
+        
+
+        circle_marker_55aae7d869a250f5d9b733221db61df5.bindPopup(popup_27048815b6cb3accca743697db6b9df4)
+        ;
+
+        
+    
+    
+            var poly_line_0ef5b14c263009bbd3b46b8c8e239e54 = L.polyline(
+                [[41.0343, 28.6801], [40.99794055, 28.82506594]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 20.866877434867384}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_0ef5b14c263009bbd3b46b8c8e239e54.bindTooltip(
+                `<div>
+                     <b>Esenyurt</b> → Yenibosna<br>Distance: 19.3 km | Tonnage: 730.3 tons<br>Fleet Allocated: 4 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49b8a642c28d7bd499cf76d8cbbacdd4 = L.circleMarker(
+                [41.0475, 28.9329],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_47802d77e6be991369cec39d6055b1d2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_56c77d981f042b7d9c8805d9ebe61e86 = $(`<div id="html_56c77d981f042b7d9c8805d9ebe61e86" style="width: 100.0%; height: 100.0%;"><b>Eyüp</b><br>Waste: 299.5 ton/day<br>Departure: 12:33</div>`)[0];
+                popup_47802d77e6be991369cec39d6055b1d2.setContent(html_56c77d981f042b7d9c8805d9ebe61e86);
+            
+        
+
+        circle_marker_49b8a642c28d7bd499cf76d8cbbacdd4.bindPopup(popup_47802d77e6be991369cec39d6055b1d2)
+        ;
+
+        
+    
+    
+            var poly_line_30dc36f83103b0c68c3b5cb7e487f3f1 = L.polyline(
+                [[41.0475, 28.9329], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 8.558557926207238}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_30dc36f83103b0c68c3b5cb7e487f3f1.bindTooltip(
+                `<div>
+                     <b>Eyüp</b> → Hasdal<br>Distance: 13.3 km | Tonnage: 299.5 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce049a349d472944e80e13e2b7978061 = L.circleMarker(
+                [41.0156, 28.9443],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_c29e8abc002ca9975c6f0fda86e7c1f2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3602ba700856d8d8a75fe1e913ad4940 = $(`<div id="html_3602ba700856d8d8a75fe1e913ad4940" style="width: 100.0%; height: 100.0%;"><b>Fatih</b><br>Waste: 409.7 ton/day<br>Departure: 12:27</div>`)[0];
+                popup_c29e8abc002ca9975c6f0fda86e7c1f2.setContent(html_3602ba700856d8d8a75fe1e913ad4940);
+            
+        
+
+        circle_marker_ce049a349d472944e80e13e2b7978061.bindPopup(popup_c29e8abc002ca9975c6f0fda86e7c1f2)
+        ;
+
+        
+    
+    
+            var poly_line_1f899174eb4ef9f965c8464731f3fb19 = L.polyline(
+                [[41.0156, 28.9443], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 11.706048092152939}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_1f899174eb4ef9f965c8464731f3fb19.bindTooltip(
+                `<div>
+                     <b>Fatih</b> → Hasdal<br>Distance: 18.2 km | Tonnage: 409.7 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee483dc6525936cd0d50aefc20ab2c1b = L.circleMarker(
+                [41.0573, 28.906],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_59807013799f007d057aecf0c867beb0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3f8348627e2cfef5ec44b0a3e283fc28 = $(`<div id="html_3f8348627e2cfef5ec44b0a3e283fc28" style="width: 100.0%; height: 100.0%;"><b>Gaziosmanpaşa</b><br>Waste: 297.7 ton/day<br>Departure: 12:24</div>`)[0];
+                popup_59807013799f007d057aecf0c867beb0.setContent(html_3f8348627e2cfef5ec44b0a3e283fc28);
+            
+        
+
+        circle_marker_ee483dc6525936cd0d50aefc20ab2c1b.bindPopup(popup_59807013799f007d057aecf0c867beb0)
+        ;
+
+        
+    
+    
+            var poly_line_7c634cfa7ba355c7e81f46c5001c0144 = L.polyline(
+                [[41.0573, 28.906], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 8.504839103613332}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_7c634cfa7ba355c7e81f46c5001c0144.bindTooltip(
+                `<div>
+                     <b>Gaziosmanpaşa</b> → Hasdal<br>Distance: 18.4 km | Tonnage: 297.7 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:24
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92e0861c131d6647ede2ca5c870c9660 = L.circleMarker(
+                [41.0223, 28.8724],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f5f9f48c643321429f8c9de6224e5b1c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4c0d7799de67fc13e46b754b94bd0723 = $(`<div id="html_4c0d7799de67fc13e46b754b94bd0723" style="width: 100.0%; height: 100.0%;"><b>Güngören</b><br>Waste: 193.7 ton/day<br>Departure: 00:00</div>`)[0];
+                popup_f5f9f48c643321429f8c9de6224e5b1c.setContent(html_4c0d7799de67fc13e46b754b94bd0723);
+            
+        
+
+        circle_marker_92e0861c131d6647ede2ca5c870c9660.bindPopup(popup_f5f9f48c643321429f8c9de6224e5b1c)
+        ;
+
+        
+    
+    
+            var poly_line_c838d6d2de941c0af705bb1e3796ddef = L.polyline(
+                [[41.0223, 28.8724], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 5.5347530863919046}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_c838d6d2de941c0af705bb1e3796ddef.bindTooltip(
+                `<div>
+                     <b>Güngören</b> → Başakşehir<br>Distance: 23.1 km | Tonnage: 193.7 tons<br>Fleet Allocated: 1 trucks<br>Departure: 00:00
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e74be47495c3a96fde0d1bfd1d15ec3 = L.circleMarker(
+                [40.988, 29.027],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_75649152f6bb4c3237bee68a0db8c79e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9a92bc2d506782a9018a3c8449123a13 = $(`<div id="html_9a92bc2d506782a9018a3c8449123a13" style="width: 100.0%; height: 100.0%;"><b>Kadıköy</b><br>Waste: 404.6 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_75649152f6bb4c3237bee68a0db8c79e.setContent(html_9a92bc2d506782a9018a3c8449123a13);
+            
+        
+
+        circle_marker_3e74be47495c3a96fde0d1bfd1d15ec3.bindPopup(popup_75649152f6bb4c3237bee68a0db8c79e)
+        ;
+
+        
+    
+    
+            var poly_line_a3d32285b5e5c8a6e788daee3c396b1e = L.polyline(
+                [[40.988, 29.027], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 11.558760799561735}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_a3d32285b5e5c8a6e788daee3c396b1e.bindTooltip(
+                `<div>
+                     <b>Kadıköy</b> → Aydınlı<br>Distance: 42.1 km | Tonnage: 404.6 tons<br>Fleet Allocated: 4 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7dd88f33dbcfbefca8516f476f747330 = L.circleMarker(
+                [41.0811, 28.9754],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f0ef474c43ea04f0449738a2826343f3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4ca66939665ab1d358c6b5ce8cfb0741 = $(`<div id="html_4ca66939665ab1d358c6b5ce8cfb0741" style="width: 100.0%; height: 100.0%;"><b>Kağıthane</b><br>Waste: 307.2 ton/day<br>Departure: 12:33</div>`)[0];
+                popup_f0ef474c43ea04f0449738a2826343f3.setContent(html_4ca66939665ab1d358c6b5ce8cfb0741);
+            
+        
+
+        circle_marker_7dd88f33dbcfbefca8516f476f747330.bindPopup(popup_f0ef474c43ea04f0449738a2826343f3)
+        ;
+
+        
+    
+    
+            var poly_line_a08955bcda062bf76e5a99000ce9a2a8 = L.polyline(
+                [[41.0811, 28.9754], [41.04899, 28.968704]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 8.77651074544385}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_a08955bcda062bf76e5a99000ce9a2a8.bindTooltip(
+                `<div>
+                     <b>Kağıthane</b> → Baruthane<br>Distance: 5.6 km | Tonnage: 307.2 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf4ac5dd562fbcaa02de1cc28103d2e7 = L.circleMarker(
+                [40.8885, 29.1866],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_d4b558fc27a5fbad0e77c8870d79ae91 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5ee7ec1d501ae25aa44c846b12afa510 = $(`<div id="html_5ee7ec1d501ae25aa44c846b12afa510" style="width: 100.0%; height: 100.0%;"><b>Kartal</b><br>Waste: 336.7 ton/day<br>Departure: 12:33</div>`)[0];
+                popup_d4b558fc27a5fbad0e77c8870d79ae91.setContent(html_5ee7ec1d501ae25aa44c846b12afa510);
+            
+        
+
+        circle_marker_bf4ac5dd562fbcaa02de1cc28103d2e7.bindPopup(popup_d4b558fc27a5fbad0e77c8870d79ae91)
+        ;
+
+        
+    
+    
+            var poly_line_5f22190e4e627e825396e8307beada08 = L.polyline(
+                [[40.8885, 29.1866], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.621091246841113}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_5f22190e4e627e825396e8307beada08.bindTooltip(
+                `<div>
+                     <b>Kartal</b> → Aydınlı<br>Distance: 17.3 km | Tonnage: 336.7 tons<br>Fleet Allocated: 3 trucks<br>Departure: 12:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5533e036027d6d63bb8449ab28778c5 = L.circleMarker(
+                [41.0028, 28.7842],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f2ce1d6f28bdc2a7a323bb015f897fef = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_af82c21d6a371206c8c33da297af7172 = $(`<div id="html_af82c21d6a371206c8c33da297af7172" style="width: 100.0%; height: 100.0%;"><b>Küçükçekmece</b><br>Waste: 578.4 ton/day<br>Departure: 12:34</div>`)[0];
+                popup_f2ce1d6f28bdc2a7a323bb015f897fef.setContent(html_af82c21d6a371206c8c33da297af7172);
+            
+        
+
+        circle_marker_c5533e036027d6d63bb8449ab28778c5.bindPopup(popup_f2ce1d6f28bdc2a7a323bb015f897fef)
+        ;
+
+        
+    
+    
+            var poly_line_c3330538e119f85cd8c33f3d40fc5ecd = L.polyline(
+                [[41.0028, 28.7842], [40.99794055, 28.82506594]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 16.52626264322572}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_c3330538e119f85cd8c33f3d40fc5ecd.bindTooltip(
+                `<div>
+                     <b>Küçükçekmece</b> → Yenibosna<br>Distance: 7.0 km | Tonnage: 578.4 tons<br>Fleet Allocated: 3 trucks<br>Departure: 12:34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dad7121db69310f2c93ef3940f785d2a = L.circleMarker(
+                [40.9257, 29.1362],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_12f6c722fff71e175cddd0ab1634f67a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f4c9cf9c6db56f01832a3d04b865e754 = $(`<div id="html_f4c9cf9c6db56f01832a3d04b865e754" style="width: 100.0%; height: 100.0%;"><b>Maltepe</b><br>Waste: 348.2 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_12f6c722fff71e175cddd0ab1634f67a.setContent(html_f4c9cf9c6db56f01832a3d04b865e754);
+            
+        
+
+        circle_marker_dad7121db69310f2c93ef3940f785d2a.bindPopup(popup_12f6c722fff71e175cddd0ab1634f67a)
+        ;
+
+        
+    
+    
+            var poly_line_eea39b542cb91abf9d8e17cd31dc7a1a = L.polyline(
+                [[40.9257, 29.1362], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.949678083706429}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_eea39b542cb91abf9d8e17cd31dc7a1a.bindTooltip(
+                `<div>
+                     <b>Maltepe</b> → Aydınlı<br>Distance: 24.5 km | Tonnage: 348.2 tons<br>Fleet Allocated: 4 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7ce828074b5176e7914e070e518e5d5 = L.circleMarker(
+                [40.877, 29.2346],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_5b74fbf51cd5b4a49663b7c51b7d7343 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_831daa188dbcbd78fa71a462508a72b2 = $(`<div id="html_831daa188dbcbd78fa71a462508a72b2" style="width: 100.0%; height: 100.0%;"><b>Pendik</b><br>Waste: 487.3 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_5b74fbf51cd5b4a49663b7c51b7d7343.setContent(html_831daa188dbcbd78fa71a462508a72b2);
+            
+        
+
+        circle_marker_b7ce828074b5176e7914e070e518e5d5.bindPopup(popup_5b74fbf51cd5b4a49663b7c51b7d7343)
+        ;
+
+        
+    
+    
+            var poly_line_d31bc4418407430a40f992c3da8d1649 = L.polyline(
+                [[40.877, 29.2346], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 13.922482041767731}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_d31bc4418407430a40f992c3da8d1649.bindTooltip(
+                `<div>
+                     <b>Pendik</b> → Aydınlı<br>Distance: 12.1 km | Tonnage: 487.3 tons<br>Fleet Allocated: 5 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8eeface4a67e083c980d605d439a6be = L.circleMarker(
+                [40.9897, 29.2255],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f4be995b6f3ec1fd6413b6c7294262a3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8c541fbba70764cfe754c4ba86c020ae = $(`<div id="html_8c541fbba70764cfe754c4ba86c020ae" style="width: 100.0%; height: 100.0%;"><b>Sancaktepe</b><br>Waste: 358.2 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_f4be995b6f3ec1fd6413b6c7294262a3.setContent(html_8c541fbba70764cfe754c4ba86c020ae);
+            
+        
+
+        circle_marker_b8eeface4a67e083c980d605d439a6be.bindPopup(popup_f4be995b6f3ec1fd6413b6c7294262a3)
+        ;
+
+        
+    
+    
+            var poly_line_7f58ba8a0b4f3fe6d8965c0ac9680554 = L.polyline(
+                [[40.9897, 29.2255], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 10.234989077248608}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_7f58ba8a0b4f3fe6d8965c0ac9680554.bindTooltip(
+                `<div>
+                     <b>Sancaktepe</b> → Aydınlı<br>Distance: 24.9 km | Tonnage: 358.2 tons<br>Fleet Allocated: 4 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1047aaaec33e9786df1efe2ff6e3b4d = L.circleMarker(
+                [41.1687, 29.0504],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_58863dafa3069cebe28a94734d03671b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_619122fcd2b6c17f8e8ce0f6c0660a60 = $(`<div id="html_619122fcd2b6c17f8e8ce0f6c0660a60" style="width: 100.0%; height: 100.0%;"><b>Sarıyer</b><br>Waste: 323.9 ton/day<br>Departure: 12:33</div>`)[0];
+                popup_58863dafa3069cebe28a94734d03671b.setContent(html_619122fcd2b6c17f8e8ce0f6c0660a60);
+            
+        
+
+        circle_marker_c1047aaaec33e9786df1efe2ff6e3b4d.bindPopup(popup_58863dafa3069cebe28a94734d03671b)
+        ;
+
+        
+    
+    
+            var poly_line_806f7242f114c946ff25361a42d9b018 = L.polyline(
+                [[41.1687, 29.0504], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.254393316046203}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_806f7242f114c946ff25361a42d9b018.bindTooltip(
+                `<div>
+                     <b>Sarıyer</b> → Hasdal<br>Distance: 18.9 km | Tonnage: 323.9 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d990da4f037ba1cffd329f5b7bbc2c4c = L.circleMarker(
+                [41.0743, 28.2464],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_9c74320e88e5a455e4c57dd1a376e8c4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e00a2666b35592f5335d1da7e4c3537f = $(`<div id="html_e00a2666b35592f5335d1da7e4c3537f" style="width: 100.0%; height: 100.0%;"><b>Silivri</b><br>Waste: 194.4 ton/day<br>Departure: 12:34</div>`)[0];
+                popup_9c74320e88e5a455e4c57dd1a376e8c4.setContent(html_e00a2666b35592f5335d1da7e4c3537f);
+            
+        
+
+        circle_marker_d990da4f037ba1cffd329f5b7bbc2c4c.bindPopup(popup_9c74320e88e5a455e4c57dd1a376e8c4)
+        ;
+
+        
+    
+    
+            var poly_line_6c5f0bcca48d1451ef4f51e9fb21f04a = L.polyline(
+                [[41.0743, 28.2464], [41.09103842, 28.29018384]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 5.55453725220211}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_6c5f0bcca48d1451ef4f51e9fb21f04a.bindTooltip(
+                `<div>
+                     <b>Silivri</b> → Silivri<br>Distance: 5.1 km | Tonnage: 194.4 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be2f9b42215b3124c0ab6df0531dbe54 = L.circleMarker(
+                [40.9669, 29.2662],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_c71bc4962e4d5e47a65d1dd2dc2a7dc6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3999e1d199bfbeca791fadf6f926f303 = $(`<div id="html_3999e1d199bfbeca791fadf6f926f303" style="width: 100.0%; height: 100.0%;"><b>Sultanbeyli</b><br>Waste: 258.7 ton/day<br>Departure: 12:34</div>`)[0];
+                popup_c71bc4962e4d5e47a65d1dd2dc2a7dc6.setContent(html_3999e1d199bfbeca791fadf6f926f303);
+            
+        
+
+        circle_marker_be2f9b42215b3124c0ab6df0531dbe54.bindPopup(popup_c71bc4962e4d5e47a65d1dd2dc2a7dc6)
+        ;
+
+        
+    
+    
+            var poly_line_7830dd84893d2f9b2f49cfe2249b5520 = L.polyline(
+                [[40.9669, 29.2662], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 7.392799403758175}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_7830dd84893d2f9b2f49cfe2249b5520.bindTooltip(
+                `<div>
+                     <b>Sultanbeyli</b> → Aydınlı<br>Distance: 21.3 km | Tonnage: 258.7 tons<br>Fleet Allocated: 3 trucks<br>Departure: 12:34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c994726892df22c30542ef3b6a25c429 = L.circleMarker(
+                [41.1065, 28.8837],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_96dc7123281f10f520abbb02a913eec1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4daf30c47c4e5a906fcd04a89c695c60 = $(`<div id="html_4daf30c47c4e5a906fcd04a89c695c60" style="width: 100.0%; height: 100.0%;"><b>Sultangazi</b><br>Waste: 344.3 ton/day<br>Departure: 12:32</div>`)[0];
+                popup_96dc7123281f10f520abbb02a913eec1.setContent(html_4daf30c47c4e5a906fcd04a89c695c60);
+            
+        
+
+        circle_marker_c994726892df22c30542ef3b6a25c429.bindPopup(popup_96dc7123281f10f520abbb02a913eec1)
+        ;
+
+        
+    
+    
+            var poly_line_2e2527ffc1d674f5aea1ffeafd4c91ae = L.polyline(
+                [[41.1065, 28.8837], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 9.83592741622656}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_2e2527ffc1d674f5aea1ffeafd4c91ae.bindTooltip(
+                `<div>
+                     <b>Sultangazi</b> → Başakşehir<br>Distance: 14.1 km | Tonnage: 344.3 tons<br>Fleet Allocated: 2 trucks<br>Departure: 12:32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_254875ea4ff9f45d0d8fdbf112a7e82e = L.circleMarker(
+                [41.1754, 29.6128],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_71012e4ba733864a855c56c1ba26845e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2a0ae64c098c82fa7de2a6b01e88d448 = $(`<div id="html_2a0ae64c098c82fa7de2a6b01e88d448" style="width: 100.0%; height: 100.0%;"><b>Şile</b><br>Waste: 74.6 ton/day<br>Departure: 12:06</div>`)[0];
+                popup_71012e4ba733864a855c56c1ba26845e.setContent(html_2a0ae64c098c82fa7de2a6b01e88d448);
+            
+        
+
+        circle_marker_254875ea4ff9f45d0d8fdbf112a7e82e.bindPopup(popup_71012e4ba733864a855c56c1ba26845e)
+        ;
+
+        
+    
+    
+            var poly_line_1b95d9336b62a93287cae27eef0a1fa1 = L.polyline(
+                [[41.1754, 29.6128], [41.15313753, 29.63946372]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 2.1312514427871454}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_1b95d9336b62a93287cae27eef0a1fa1.bindTooltip(
+                `<div>
+                     <b>Şile</b> → Şile<br>Distance: 5.6 km | Tonnage: 74.6 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34855142eb58555c20a51cfcd3f22346 = L.circleMarker(
+                [41.061, 28.9878],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_6005962d1f05d536f1d5b1e7c0b02019 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ac9d45ad42333a0803ea9778c6e0758f = $(`<div id="html_ac9d45ad42333a0803ea9778c6e0758f" style="width: 100.0%; height: 100.0%;"><b>Şişli</b><br>Waste: 282.7 ton/day<br>Departure: 12:10</div>`)[0];
+                popup_6005962d1f05d536f1d5b1e7c0b02019.setContent(html_ac9d45ad42333a0803ea9778c6e0758f);
+            
+        
+
+        circle_marker_34855142eb58555c20a51cfcd3f22346.bindPopup(popup_6005962d1f05d536f1d5b1e7c0b02019)
+        ;
+
+        
+    
+    
+            var poly_line_e02f777ab1e9c697f022364737ddbb24 = L.polyline(
+                [[41.061, 28.9878], [41.146396, 28.778397]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 8.07831390427944}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_e02f777ab1e9c697f022364737ddbb24.bindTooltip(
+                `<div>
+                     <b>Şişli</b> → Başakşehir<br>Distance: 29.7 km | Tonnage: 282.7 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_458ecaf97e77070791ff3fc7ee8460e9 = L.circleMarker(
+                [40.8166, 29.3097],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_785c68d26e3b046710a8090dfd2f47dc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_70ce7483036f9ecd32db0e808ac1ae55 = $(`<div id="html_70ce7483036f9ecd32db0e808ac1ae55" style="width: 100.0%; height: 100.0%;"><b>Tuzla</b><br>Waste: 246.7 ton/day<br>Departure: 12:29</div>`)[0];
+                popup_785c68d26e3b046710a8090dfd2f47dc.setContent(html_70ce7483036f9ecd32db0e808ac1ae55);
+            
+        
+
+        circle_marker_458ecaf97e77070791ff3fc7ee8460e9.bindPopup(popup_785c68d26e3b046710a8090dfd2f47dc)
+        ;
+
+        
+    
+    
+            var poly_line_90dbea69a8e6bfe490cbce3692990e90 = L.polyline(
+                [[40.8166, 29.3097], [40.86088235, 29.34715122]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 7.047958952545282}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_90dbea69a8e6bfe490cbce3692990e90.bindTooltip(
+                `<div>
+                     <b>Tuzla</b> → Aydınlı<br>Distance: 11.8 km | Tonnage: 246.7 tons<br>Fleet Allocated: 3 trucks<br>Departure: 12:29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_689d46c13b955701d48b14d93b5d16d7 = L.circleMarker(
+                [41.0256, 29.0984],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_f9a0ed5a41b3618c74cc5ba34598c884 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_140765daf9bd779743468fb1ee8bf9fe = $(`<div id="html_140765daf9bd779743468fb1ee8bf9fe" style="width: 100.0%; height: 100.0%;"><b>Ümraniye</b><br>Waste: 529.8 ton/day<br>Departure: 12:31</div>`)[0];
+                popup_f9a0ed5a41b3618c74cc5ba34598c884.setContent(html_140765daf9bd779743468fb1ee8bf9fe);
+            
+        
+
+        circle_marker_689d46c13b955701d48b14d93b5d16d7.bindPopup(popup_f9a0ed5a41b3618c74cc5ba34598c884)
+        ;
+
+        
+    
+    
+            var poly_line_58a124158bfcabd164656f95176a1d2c = L.polyline(
+                [[41.0256, 29.0984], [41.05831853, 29.11340743]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 15.135845402289773}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_58a124158bfcabd164656f95176a1d2c.bindTooltip(
+                `<div>
+                     <b>Ümraniye</b> → Hekimbaşı<br>Distance: 5.3 km | Tonnage: 529.8 tons<br>Fleet Allocated: 5 trucks<br>Departure: 12:31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_335e00ed6eb05c62ef346fdd79c5bfee = L.circleMarker(
+                [41.0267, 29.0158],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_6d576ef294856fc8f702ed434bc16620 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_810c09c4a4ae20857250d48ea629babe = $(`<div id="html_810c09c4a4ae20857250d48ea629babe" style="width: 100.0%; height: 100.0%;"><b>Üsküdar</b><br>Waste: 421.8 ton/day<br>Departure: 12:36</div>`)[0];
+                popup_6d576ef294856fc8f702ed434bc16620.setContent(html_810c09c4a4ae20857250d48ea629babe);
+            
+        
+
+        circle_marker_335e00ed6eb05c62ef346fdd79c5bfee.bindPopup(popup_6d576ef294856fc8f702ed434bc16620)
+        ;
+
+        
+    
+    
+            var poly_line_8872b7649d0c6b40c60099390045903a = L.polyline(
+                [[41.0267, 29.0158], [41.05831853, 29.11340743]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 12.051249318519098}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_8872b7649d0c6b40c60099390045903a.bindTooltip(
+                `<div>
+                     <b>Üsküdar</b> → Hekimbaşı<br>Distance: 13.7 km | Tonnage: 421.8 tons<br>Fleet Allocated: 4 trucks<br>Departure: 12:36
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34c30cb1bf0efd276b42ea6704a9c40d = L.circleMarker(
+                [40.9896, 28.9026],
+                {"bubblingMouseEvents": true, "color": "#ffffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aaffcc", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+        var popup_90fff40056501b9c55eb8b64305bc9d7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b400f98846020f5c36a4d561fe61bd3a = $(`<div id="html_b400f98846020f5c36a4d561fe61bd3a" style="width: 100.0%; height: 100.0%;"><b>Zeytinburnu</b><br>Waste: 243.3 ton/day<br>Departure: 12:59</div>`)[0];
+                popup_90fff40056501b9c55eb8b64305bc9d7.setContent(html_b400f98846020f5c36a4d561fe61bd3a);
+            
+        
+
+        circle_marker_34c30cb1bf0efd276b42ea6704a9c40d.bindPopup(popup_90fff40056501b9c55eb8b64305bc9d7)
+        ;
+
+        
+    
+    
+            var poly_line_147a58047fd74ca61ede266f44c5736f = L.polyline(
+                [[40.9896, 28.9026], [41.13722435, 28.93079057]],
+                {"bubblingMouseEvents": true, "color": "#00ff88", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00ff88", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 6.952575222540607}
+            ).addTo(map_81da8dfe069dc78dd7307dc6a1d737ed);
+        
+    
+            poly_line_147a58047fd74ca61ede266f44c5736f.bindTooltip(
+                `<div>
+                     <b>Zeytinburnu</b> → Hasdal<br>Distance: 21.5 km | Tonnage: 243.3 tons<br>Fleet Allocated: 1 trucks<br>Departure: 12:59
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

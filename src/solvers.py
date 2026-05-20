@@ -599,6 +599,159 @@ def newton_reduced_problem(z_init: np.ndarray,
     }
 
 
+def lbfgs_solver(z0: np.ndarray,
+                 objective_fn: Callable,
+                 gradient_fn: Callable,
+                 d_i: np.ndarray,
+                 N_DISTRICTS: int,
+                 N_STATIONS: int,
+                 N_ROUTES: int,
+                 max_iter: int = 500,
+                 tol: float = 1e-6,
+                 verbose: bool = True) -> Dict[str, Any]:
+    """
+    L-BFGS-B solver using augmented Lagrangian for equality constraint.
+
+    L-BFGS approximates the inverse Hessian from the last m gradient updates,
+    achieving superlinear convergence without storing the full 702×702 Hessian.
+
+    Why NOT simplex projection:
+        Projection makes the function non-smooth and inconsistent: the gradient we
+        return is ∇f(P(z)), but L-BFGS expects the gradient of the composed function
+        ∂/∂z[f(P(z))] = J_P^T · ∇f(P(z)), which requires the Jacobian of P.
+        Without this, L-BFGS terminates ABNORMAL due to Wolfe condition failures.
+
+    Instead we use an augmented Lagrangian penalty:
+        φ(z) = f(z) + λ · Σ_i (Σ_j x_ij − d_i)²
+    This keeps the objective smooth and gradient-consistent, so L-BFGS works
+    correctly. The equality constraint is approximately satisfied (residual
+    proportional to 1/λ).
+
+    Args:
+        z0: Initial point [x_flat, t_flat]
+        objective_fn: Function taking z → scalar f(z)
+        gradient_fn: Function taking z → gradient vector ∇f(z)
+        d_i: Daily waste per district (for constraint penalty)
+        N_DISTRICTS: Number of districts
+        N_STATIONS: Number of stations
+        N_ROUTES: N_DISTRICTS × N_STATIONS
+        max_iter: Maximum L-BFGS-B iterations
+        tol: Convergence tolerance (gradient norm of augmented objective)
+        verbose: Print progress
+
+    Returns:
+        result: Dictionary with keys z_opt, f_opt, history, grad_norms,
+                iterations, converged
+    """
+    history = []
+    grad_norms = []
+    iteration_count = [0]
+
+    # Lagrangian multiplier: large enough to enforce constraint tightly
+    # but not so large that it dominates transport cost numerically.
+    # Rule of thumb: lambda_eq ~ 10 * MU / (n_districts * mean_d_i)
+    lambda_eq = 5000.0
+
+    def augmented_objective(z):
+        """f(z) + λ·||Ax − d||² — smooth, L-BFGS compatible."""
+        x = z[:N_ROUTES].reshape(N_DISTRICTS, N_STATIONS)
+        # Original scaled objective
+        f = objective_fn(z)
+        # Equality constraint penalty: Σ_j x_ij = d_i
+        residuals = np.sum(x, axis=1) - d_i       # shape: (N_DISTRICTS,)
+        penalty   = lambda_eq * np.sum(residuals ** 2) / 10000.0
+        return f + penalty
+
+    def augmented_gradient(z):
+        """∇φ(z) = ∇f(z) + λ·∂(||Ax-d||²)/∂z — consistent with augmented_objective."""
+        x = z[:N_ROUTES].reshape(N_DISTRICTS, N_STATIONS)
+        # Gradient of original objective
+        grad_f = gradient_fn(z)
+        # Gradient of penalty w.r.t. x: ∂/∂x_ij [λ·(Σ_k x_ik − d_i)²]
+        #   = 2λ·(Σ_k x_ik − d_i)   broadcast to (N_DISTRICTS, N_STATIONS)
+        residuals    = np.sum(x, axis=1) - d_i      # (N_DISTRICTS,)
+        grad_penalty = 2.0 * lambda_eq * residuals   # (N_DISTRICTS,)
+        grad_penalty_x = np.outer(grad_penalty, np.ones(N_STATIONS))  # (N_D, N_S)
+        # Combine (penalty only affects x part, not t part)
+        grad_augmented          = grad_f.copy()
+        grad_augmented[:N_ROUTES] += grad_penalty_x.flatten() / 10000.0
+        return grad_augmented
+
+    def callback(z):
+        """Record convergence history at each L-BFGS-B iteration."""
+        f_orig    = objective_fn(z)     # track original f (not augmented) for comparison
+        grad      = augmented_gradient(z)
+        grad_norm = np.linalg.norm(grad)
+
+        history.append(f_orig)
+        grad_norms.append(grad_norm)
+
+        if verbose and iteration_count[0] % 20 == 0:
+            x = z[:N_ROUTES].reshape(N_DISTRICTS, N_STATIONS)
+            eq_resid = np.max(np.abs(np.sum(x, axis=1) - d_i))
+            print(f"  Iter {iteration_count[0]:4d}: f = {f_orig:.4f}, "
+                  f"||grad|| = {grad_norm:.4e}, eq_resid = {eq_resid:.3e}")
+
+        iteration_count[0] += 1
+
+    if verbose:
+        print("Starting L-BFGS-B (augmented Lagrangian, lambda_eq="
+              f"{lambda_eq:.0f})...")
+
+    # Bounds: x_ij >= 0, t_ij in [6, 22]
+    bounds = [(0.0, None)] * N_ROUTES + [(6.0, 22.0)] * N_ROUTES
+
+    result = minimize(
+        augmented_objective,
+        z0,
+        method='L-BFGS-B',
+        jac=augmented_gradient,
+        bounds=bounds,
+        callback=callback,
+        options={
+            'maxiter': max_iter,
+            'ftol': 1e-15,      # very tight: let gtol drive convergence
+            'gtol': tol,
+            'maxcor': 20,       # number of past gradient pairs for Hessian approx
+            'disp': False
+        }
+    )
+
+    z_opt = result.x.copy()
+    z_opt[N_ROUTES:] = np.clip(z_opt[N_ROUTES:], 6.0, 22.0)
+
+    # Check constraint satisfaction
+    x_opt     = z_opt[:N_ROUTES].reshape(N_DISTRICTS, N_STATIONS)
+    eq_resid  = np.max(np.abs(np.sum(x_opt, axis=1) - d_i))
+
+    f_opt          = objective_fn(z_opt)
+    final_grad     = augmented_gradient(z_opt)
+    final_grad_norm = np.linalg.norm(final_grad)
+
+    if len(history) == 0 or abs(history[-1] - f_opt) > 1e-6:
+        history.append(f_opt)
+        grad_norms.append(final_grad_norm)
+
+    if verbose:
+        status = "Converged" if result.success else f"Stopped: {result.message}"
+        print(f"   {status}")
+        print(f"   Final f = {f_opt:.4f}, ||grad|| = {final_grad_norm:.4e}")
+        print(f"   Equality constraint max residual: {eq_resid:.4e}")
+        print(f"   L-BFGS iterations: {iteration_count[0]}")
+
+    return {
+        'z_opt':    z_opt,
+        'f_opt':    f_opt,
+        'history':  history,
+        'grad_norms': grad_norms,
+        'iterations': iteration_count[0],
+        'converged':  result.success
+    }
+
+
+
+
+
 def fleet_constraint_pruning(x: np.ndarray,
                              d_i: np.ndarray,
                              N_DISTRICTS: int,
@@ -736,67 +889,206 @@ def capacity_aware_rebalancing(x: np.ndarray,
     Rebalance allocations to respect station capacity constraints.
 
     After pruning to 1 route per district, if any station is overloaded beyond
-    capacity_tolerance, reassign the largest contributing district to its
-    second-best same-side station.
+    capacity_tolerance, reassign districts from it to under-loaded same-side stations.
+
+    Key improvement over naive version:
+      - Candidate alternative stations are scored by BOTH available headroom AND distance.
+        This prevents the bounce loop where a district is moved from one overloaded
+        station to another overloaded station indefinitely.
+      - Districts are tried in order from smallest to largest tonnage (easier to move
+        small districts first, preserving options for large heavy districts).
+      - If no same-side station has capacity headroom, the function exits gracefully
+        (fundamental capacity infeasibility — documented as Issue R1).
 
     Args:
-        x: Allocation matrix after pruning (N_DISTRICTS, N_STATIONS)
+        x: Allocation matrix after pruning (N_DISTRICTS, N_STATIONS) — 1 active
+           route per district (exactly one non-zero entry per row)
         Q_j: Station capacities (N_STATIONS,)
-        D_penalized: Distance matrix with Bosphorus penalty
-        districts_yaka: Array of district sides ('Asya' or 'Avrupa')
-        stations_yaka: Array of station sides ('Asya' or 'Avrupa')
-        N_DISTRICTS: Number of districts
-        N_STATIONS: Number of stations
-        capacity_tolerance: Station capacity tolerance (default 1.05 = 105%)
+        D_penalized: Distance matrix with Bosphorus penalty applied
+        districts_yaka: Array of district sides ('Asya' or 'Avrupa'), shape (N_DISTRICTS,)
+        stations_yaka: Array of station sides ('Asya' or 'Avrupa'), shape (N_STATIONS,)
+        N_DISTRICTS: Number of districts (39)
+        N_STATIONS: Number of stations (9)
+        capacity_tolerance: Station may be loaded up to this fraction of Q_j
+                            (default 1.05 = 105%)
 
     Returns:
-        x_rebalanced: Matrix with stations within capacity tolerance
+        x_rebalanced: Allocation matrix with overloads reduced as much as feasible
     """
     x_rebal = x.reshape(N_DISTRICTS, N_STATIONS).copy()
+    threshold = Q_j * capacity_tolerance
 
-    max_iterations = 100
+    max_iterations = N_DISTRICTS * N_STATIONS  # generous upper bound
+    prev_total_overflow = float('inf')
+
     for iteration in range(max_iterations):
         station_loads = np.sum(x_rebal, axis=0)
-        overloaded = station_loads > Q_j * capacity_tolerance
+        overflow_per_station = np.maximum(0.0, station_loads - threshold)
 
-        if not np.any(overloaded):
-            break  # All stations within capacity
+        total_overflow = float(np.sum(overflow_per_station))
+        if total_overflow < 1e-3:
+            break  # All stations within tolerance
+
+        # If overflow isn't improving, stop (fundamental infeasibility)
+        if total_overflow >= prev_total_overflow - 1e-3:
+            break
+        prev_total_overflow = total_overflow
 
         # Find most overloaded station
-        overflow = station_loads - Q_j * capacity_tolerance
-        overflow[~overloaded] = -np.inf
-        j_overloaded = int(np.argmax(overflow))
+        j_overloaded = int(np.argmax(overflow_per_station))
 
-        # Find largest district assigned to this station
-        contributors = x_rebal[:, j_overloaded]
-        if np.max(contributors) == 0:
-            break  # No contributors (shouldn't happen)
+        # Find all districts currently assigned to this station,
+        # sorted by tonnage ASCENDING (try small districts first)
+        assigned_districts = [i for i in range(N_DISTRICTS)
+                               if x_rebal[i, j_overloaded] > 0.1]
+        assigned_districts.sort(key=lambda i: x_rebal[i, j_overloaded])
 
-        i_largest = int(np.argmax(contributors))
-        tonnage_to_reassign = x_rebal[i_largest, j_overloaded]
+        moved = False
+        for i_candidate in assigned_districts:
+            tonnage = x_rebal[i_candidate, j_overloaded]
+            district_side = districts_yaka[i_candidate]
 
-        # Find second-best same-side station for this district
-        district_side = districts_yaka[i_largest]
-        same_side_stations = [j for j in range(N_STATIONS)
-                             if stations_yaka[j] == district_side and j != j_overloaded]
+            # Find same-side alternatives (not current overloaded station)
+            alternatives = [j for j in range(N_STATIONS)
+                            if stations_yaka[j] == district_side and j != j_overloaded]
 
-        if not same_side_stations:
-            # No alternative same-side station available
+            if not alternatives:
+                continue  # No same-side alternative exists
+
+            # Score each alternative by: available headroom (primary) + distance (secondary)
+            # We want stations with most remaining capacity AND shortest distance.
+            # Score = headroom_weight * available_fraction - distance_weight * normalized_dist
+            # An alternative is only viable if it has enough headroom for this district.
+            best_j = None
+            best_score = -np.inf
+
+            max_dist = max(D_penalized[i_candidate, j] for j in alternatives) + 1e-9
+
+            for j_alt in alternatives:
+                remaining_cap = threshold[j_alt] - station_loads[j_alt]
+                # Only consider stations that can actually absorb this district's tonnage
+                # (or have some meaningful headroom — we allow slight over-tolerance)
+                if remaining_cap < -threshold[j_alt] * 0.10:
+                    # This alternative is also significantly overloaded — skip
+                    continue
+                # Score: prefer high remaining capacity, penalize long distance
+                headroom_score = remaining_cap / (threshold[j_alt] + 1e-9)
+                dist_score = 1.0 - (D_penalized[i_candidate, j_alt] / max_dist)
+                score = 0.7 * headroom_score + 0.3 * dist_score
+
+                if score > best_score:
+                    best_score = score
+                    best_j = j_alt
+
+            if best_j is None:
+                continue  # No viable alternative for this district
+
+            # Reassign: move district i_candidate from j_overloaded to best_j
+            x_rebal[i_candidate, j_overloaded] = 0.0
+            x_rebal[i_candidate, best_j] = tonnage
+            # Update loads immediately for next candidate evaluation
+            station_loads[j_overloaded] -= tonnage
+            station_loads[best_j] += tonnage
+            moved = True
+            break  # Restart loop from scratch with updated loads
+
+        if not moved:
+            # No district could be moved — fundamental capacity infeasibility
             break
 
-        # Choose station with lowest distance among same-side alternatives
-        alternative_distances = [(D_penalized[i_largest, j], j) for j in same_side_stations]
-        alternative_distances.sort()
-        j_alternative = alternative_distances[0][1]
-
-        # Reassign
-        x_rebal[i_largest, j_overloaded] = 0.0
-        x_rebal[i_largest, j_alternative] = tonnage_to_reassign
-
     final_loads = np.sum(x_rebal, axis=0)
-    final_overflow = np.sum(np.maximum(0.0, final_loads - Q_j))
+    final_overflow = float(np.sum(np.maximum(0.0, final_loads - Q_j)))
+    n_empty = int(np.sum(final_loads < 1.0))
+    print(f"   [Rebalancing] Total overflow after: {final_overflow:.1f} ton/day  |  "
+          f"Empty stations: {n_empty}")
 
     return x_rebal
+
+
+def fill_empty_stations(x: np.ndarray,
+                        Q_j: np.ndarray,
+                        D_penalized: np.ndarray,
+                        districts_yaka: np.ndarray,
+                        stations_yaka: np.ndarray,
+                        N_DISTRICTS: int,
+                        N_STATIONS: int) -> np.ndarray:
+    """
+    Ensure every station receives at least some waste (non-zero load).
+
+    capacity_aware_rebalancing only moves districts AWAY from overloaded stations.
+    If a station is under the capacity threshold (e.g., Aydınlı at 95%), rebalancing
+    never fires and other stations (e.g., Küçükbakkalköy) remain completely empty.
+
+    This function finds empty stations and 'steals' the nearest same-side district
+    from whichever station it is currently assigned to — provided the donor station
+    would still have at least one other district remaining.
+
+    The loss function and optimizer are unaffected; this is pure post-processing.
+
+    Args:
+        x: Allocation matrix (N_DISTRICTS, N_STATIONS) — 1 active route per district
+        Q_j: Station capacities (N_STATIONS,)
+        D_penalized: Distance matrix with Bosphorus penalty applied
+        districts_yaka: District sides ('Asya' or 'Avrupa'), shape (N_DISTRICTS,)
+        stations_yaka: Station sides ('Asya' or 'Avrupa'), shape (N_STATIONS,)
+        N_DISTRICTS: Number of districts (39)
+        N_STATIONS: Number of stations (9)
+
+    Returns:
+        x_filled: Allocation matrix where every station has non-zero load
+                  (or remains empty only if no feasible same-side district exists)
+    """
+    x_filled = x.reshape(N_DISTRICTS, N_STATIONS).copy()
+
+    for j_empty in range(N_STATIONS):
+        station_loads = np.sum(x_filled, axis=0)
+        if station_loads[j_empty] > 0.1:
+            continue  # Station already has load — skip
+
+        station_side = stations_yaka[j_empty]
+
+        # Find all same-side districts NOT already assigned to this station
+        # whose current station has more than 1 district (so donor won't become empty)
+        candidates = []
+        for i in range(N_DISTRICTS):
+            if districts_yaka[i] != station_side:
+                continue  # Wrong side — cannot assign
+
+            # Current station of district i
+            current_j = int(np.argmax(x_filled[i, :]))
+            if x_filled[i, current_j] < 0.1:
+                continue  # District has no load (shouldn't happen)
+
+            # Donor station must have at least 2 districts to give one away
+            n_at_donor = int(np.sum(x_filled[:, current_j] > 0.1))
+            if n_at_donor < 2:
+                continue  # Would leave donor empty — not allowed
+
+            dist_to_empty = D_penalized[i, j_empty]
+            candidates.append((dist_to_empty, i, current_j))
+
+        if not candidates:
+            # No feasible same-side district found — leave station empty
+            print(f"   [FillEmpty] Station {j_empty} has no feasible same-side donor.")
+            continue
+
+        # Pick the nearest same-side district
+        candidates.sort()
+        _, i_move, j_donor = candidates[0]
+        tonnage = x_filled[i_move, j_donor]
+
+        # Reassign district i_move from j_donor to j_empty
+        x_filled[i_move, j_donor]  = 0.0
+        x_filled[i_move, j_empty] = tonnage
+
+        short_j_empty = f"station_{j_empty}"
+        print(f"   [FillEmpty] District {i_move} -> station {j_empty} "
+              f"(was at station {j_donor}, dist={candidates[0][0]:.1f} km)")
+
+    final_loads = np.sum(x_filled, axis=0)
+    n_empty = int(np.sum(final_loads < 1.0))
+    print(f"   [FillEmpty] Empty stations remaining: {n_empty}")
+    return x_filled
 
 
 def crossing_aware_pruning(x: np.ndarray,
